@@ -36,7 +36,9 @@ contInnerBtn.addEventListener("click", function(){
     let textoInput_length = textoInput.length;
     let result = textoInput.value.split(" ");
     let result_length = result.length;
-    textoInput_lengthWS = result[result_length-result_length+1].length + ;
+    for (i = result_length; i>0; i++){
+    textoInput_lengthWS =;
+    }
     for (i in result_length) {
     result = result[i].trim();
     }
