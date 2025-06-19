@@ -1,0 +1,37 @@
+.boton 
+{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(135deg, #a8e0e5,#d5ecee);
+    color: black;
+    border: none;
+    border-radius: 7px;
+    padding: 5px 14px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#contenedorBtn
+{
+    background-color: #6bc7f0;
+    border-radius: 7px;
+    box-sizing: content-box;
+}
+h1{
+    color: rgb(4, 180, 180);
+    text-align: center;
+}
+
+#ContarPalabras{
+    display: none;
+}
+
+#BuscarPalabras{
+    display: none;
+}
+
+#GenerarAcronimos{
+    display: none;
+}
