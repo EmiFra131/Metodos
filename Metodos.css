@@ -1,3 +1,10 @@
+#Programa 
+{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
 .boton 
 {
     display: flex;
@@ -22,10 +29,11 @@
 h1{
     color: rgb(4, 180, 180);
     text-align: center;
+    
 }
 
 #ContarPalabras{
-    display: none;
+    display: flex;
 }
 
 #BuscarPalabras{
@@ -34,4 +42,13 @@ h1{
 
 #GenerarAcronimos{
     display: none;
+}
+
+.Funciones
+{
+    background-color: #a8e0e5;
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid #015377;
+    width: 500px;
 }
