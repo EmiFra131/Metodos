@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,41 +8,79 @@
 </head>
 <body>
     <h1>Juego de palabras</h1>
-    <div id = "Programa">
+
+    <div id = "contenedor">
+
         <div id = "contenedorBtn">
-        <button  id="contado" class="boton"> Contador </button>
+            <button  id="contado" class="boton"> Contador </button>
 
-        <button id="Buscador" class="boton"> Buscador</button>
-        
-        <button id="Acronimo" class="boton"> Acronimo </button>
+            <button id="Buscador" class="boton"> Buscador</button>
+            
+            <button id="Acronimo" class="boton"> Acronimo </button>
         </div>
 
-        
-        <div id = "ContarPalabras" class = "Funciones">
-        <h2> Contador de palabras </h2> 
-        <form>
-                <label for = "TextoCont"> Introduce aquí tu texto </label> <br>
-                <textarea id = "TextoCont" name = "TextoCont"> </textarea>
-        </form>
-        <button id="contar" class="boton2">Contar palabras</button>
-        </div>
+        <div id = "Programa">
+            <div id = "ContarPalabras" class = "Funciones">
+                <div class = "Encabezado">
+                    <h2> Contador de palabras </h2>
+                    <form>
+                        <br>
+                        <label for = "TextoCont"> Introduce aquí tu texto </label> <br> <br>
+                        <textarea id = "TextoCont" name = "TextoCont"> </textarea>
+                    </form>
+                    <button id="contar" class="boton2">Contar palabras</button>
+                </div>
+                <div class = "Contenido">
+                    <h3> Caracteres con espacios: </h5> <br>
+                    <p id="cce"></p> <br>
+                    <h3> Caracteres sin espacios: </h3> <br>
+                    <p id="cse"></p> <br>
+                    <h3> Número de palabras: </h3> <br>
+                    <p id="ndp"></p> <br>
+                    <h3> Palabra más larga: </h3> <br>
+                    <p id="pml"></p> <br>
+                </div>
+            </div>
 
-        <div id = "BuscarPalabras" class = "Funciones">
-            <h2> Buscador de palabras o texto </h2>    
-            <form>
-                <label for = "BuscadorText"> Introduce aquí tu texto </label> <br>
-                <textarea id = "BuscadorText" name = "BuscadorText"> </textarea>    
-            </form>
-        </div>
+            <div id = "BuscarPalabras" class = "Funciones">
+                <div class = "Encabezado">
+                    <h2> Buscador de palabras o texto </h2>    
+                    <form>
+                        <label for = "BuscadorText"> Introduce aquí tu texto </label> <br>
+                        <textarea id = "BuscadorText" name = "BuscadorText"> </textarea>
+                        <label for = "wordInText"> Introduce aquí la palabra a buscar </label> <br>
+                        <input type="text" id="wordInText" name="wordInText">
+                    </form>
+                    <button id="buscar" class="boton2">Buscar palabras</button>
+                </div>
+                <div class = "Contenido">
+                    <h3> Palabra a buscar: </h5> <br>
+                    <p id="pab"></p><br>
+                    <h3> (Cantidad de veces en las que fue encontrada aquí) </h3> <br>
+                    <p id="coinsidencias"></p><br>
+                    <h3> (Posiciones de la cadena en las que fue encontrada aquí) </h3>
+                    <p id="pos"></p><br>
+                </div>
+            </div>
 
-        <div id = "GenerarAcronimos" class = "Funciones">
-            <h2> Generador de Acrónimos </h2>
-            <form>
-                <label for = "GenAcr"> Introduce aquí tu texto </label> <br>
-                <textarea id = "GenAcr" name = "GenAcr"> </textarea>
-            </form>    
-        </div>  
-    </div>    
+            <div id = "GenerarAcronimos" class = "Funciones">
+                <div class = "Encabezado">
+                    <h2> Generador de Acrónimos </h2>
+                    <form>
+                        <label for = "GenAcr"> Introduce aquí tu texto </label> <br>
+                        <textarea id = "GenAcr" name = "GenAcr"> </textarea>
+                    </form>    
+                    <button id="generar" class="boton2">Generar Acrónimos</button>
+                </div>   
+                <div class = "Contenido">
+                    <h3> (Aquí las palabras introducidas por el usuario) </h5> <br>
+                    <p id="palabras"></p><br>
+                    <h3> Acrónimo generado: </h3> <br>
+                    <p id="acro"></p><br>
+                </div> 
+            </div>  
+        </div>
+    </div>
     <script src="Metodos.js"></script>  
 </body>
 </html>
