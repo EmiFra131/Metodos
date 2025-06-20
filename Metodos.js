@@ -104,14 +104,16 @@ acroInnerBtn.addEventListener("click", function(){
     console.log("si se ejecuta");
     let textAcro = document.getElementById("GenAcr");
 
-    let palab = document.getElementById("palabra");
+    let palab = document.getElementById("palabras");
     let acron = document.getElementById("acro");
 
-    
+    palab.textContent = textAcro.value;
+
+    acron.textContent="";
 
     let generateAcronims = textAcro.value.split(" ");
     let acronims = [];
-    for (i = 1; i<acronims.length; i++){
+    for (i = 1; i<generateAcronims.length; i++){
         // Array of the acronims, each index is an acronim of a word in the text box
         acronims += generateAcronims[i].slice(0,1);
     }
@@ -119,5 +121,5 @@ acroInnerBtn.addEventListener("click", function(){
     for (i = 0; i<acronims.length; i++){
         acron.textContent += acronims[i];
     }
-    palab.textContent = textAcro.value;
+    
 });
