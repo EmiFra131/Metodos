@@ -86,20 +86,44 @@ buscInnerBtn.addEventListener("click", function(){
     let match = [];
     let count = 0;
 
-    for (i = 0; match[match.length-1]!=-1; i=match[match.length-1]+1){
-        match += txt.indexOf(txtInside, i); // Every index in this array is a coincidence between small text in big text
-        count++; // Number of coincidences
+    /*
+    Tenían esto dentro del for: i = 0; match[match.length-1]!=-1; i=match[match.length-1]+1
+    Lo anterior tiene varios errores:
+        - La notación del for es for(i = inicio, i <>= comparación; aumento), si se fijan hay problemas ahí
+        pues si bien el inicio es una asignación y se hace con un =; el hasta donde NO tiene ninguna comparación 
+        con la i, no tiene i; y la forma en la que aumenta i es una asignación donde aumenta de "uno en uno".
+        - match es un arreglo, un arreglo vacio con longitud 0, entonces cuando hacen match[match.length-1] hacen match[0 -1] eso da match[-1] lo que es un tipo 
+        de dato primitivo llamado undefined, es decir que no está definido, pues esa localidad no existe en el arreglo y cuando hacen != -1 es true, porque cualquier undefined sí es distinto de -1.
+        Entonces esa condicion SIEMPRE se cumple y entra en un ciclo infinito. Incluso si el arreglo tiene contenido se seguirá cumpliendo
+        a menos de que se meta un -1 en el arreglo.
+    */ 
+                                    
+    // for (i = 0; match[match.length-1]!= -1; i=match[match.length-1]+1){
+    //     let indice = txt.indexOf(txtInside, i);
+    //     if (indice != -1){
+    //         match.push(txt.indexOf(txtInside, i));
+    //         count++; 
+    //     } else 
+    //         break;
+    // }
+    
+    let i = 0;
+    let index = txt.indexOf(txtInside, i);
+    while (index !== -1) {
+        match.push(index);
+        i = index + 1;
+        index = txt.indexOf(txtInside, i);
+        count++;
     }
 
-    pabusc.textContent = txtInside.value;
-    coins.textContent = match;
-    positions.textContent = count;
+    
 
-    // Display from txt[match] to txt[match+txtInside_length]
-    // Display count variable
+    pabusc.textContent = txtInside;
+    coins.textContent = count;
+    positions.textContent = match;
 });
 
-acroInnerBtn.addEventListener("", function(){
+acroInnerBtn.addEventListener("click", function(){
     let textAcro = document.getElementById("GetAcr").value;
 
     let palab = document.getElementById("palabra");
