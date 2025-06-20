@@ -49,7 +49,7 @@ contInnerBtn.addEventListener("click", function(){
 
     let nospace = 0;
     let biggest = [result[1]];
-    for( let i = 1 ; i < result_length ; i++){
+    for( let i = 0 ; i < result_length ; i++){
         nospace += result[i].length; //ARRAY = [" ", yfd, ufui, jvu];
         //       ^--- summed each iteration           ^[1]  ^[2] ^----result[3].length = 3
         let arrayOfLengths = [];
@@ -97,23 +97,27 @@ buscInnerBtn.addEventListener("click", function(){
 
     // Display from txt[match] to txt[match+txtInside_length]
     // Display count variable
+    
 });
 
-acroInnerBtn.addEventListener("", function(){
-    let textAcro = document.getElementById("GetAcr").value;
+acroInnerBtn.addEventListener("click", function(){
+    console.log("si se ejecuta");
+    let textAcro = document.getElementById("GenAcr");
 
     let palab = document.getElementById("palabra");
     let acron = document.getElementById("acro");
 
-    palab.textContent = textAcro;
+    
 
-    let generateAcronims = textAcro.split(" ");
+    let generateAcronims = textAcro.value.split(" ");
     let acronims = [];
     for (i = 1; i<acronims.length; i++){
         // Array of the acronims, each index is an acronim of a word in the text box
         acronims += generateAcronims[i].slice(0,1);
     }
 
-    acron.textContent = acronims;
-    
+    for (i = 0; i<acronims.length; i++){
+        acron.textContent += acronims[i];
+    }
+    palab.textContent = textAcro.value;
 });
